@@ -3,11 +3,15 @@
 
   <remote  name="aosp"
            fetch=".." />
+
+  <remote name="bitosp"
+           fetch="https://github.com/BitOSP/" />
+
   <default revision="refs/tags/android-6.0.1_r31"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk" >
+  <project path="build" name="platform/build" remote="bitosp" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
